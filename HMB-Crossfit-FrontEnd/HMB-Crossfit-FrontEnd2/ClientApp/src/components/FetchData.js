@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Weather } from './Weather';
 
 export class FetchData extends Component {
   displayName = FetchData.name
@@ -9,12 +8,10 @@ export class FetchData extends Component {
     this.state = { forecasts: [], loading: true };
 
       fetch('https://localhost:44385/api/SampleData')
-      .then(Response => Response.json())
+      .then(response => response.json())
       .then(data => {
-       this.setState({ forecasts: data, loading: false });
-          });
-
-      console.log(this.state.forecasts)
+        this.setState({ forecasts: data, loading: false });
+      });
   }
 
   static renderForecastsTable(forecasts) {
@@ -38,13 +35,11 @@ export class FetchData extends Component {
             </tr>
           )}
         </tbody>
-        </table>
+      </table>
     );
   }
 
-    render() {
-        console.log(this.state.forecasts);
-
+  render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
       : FetchData.renderForecastsTable(this.state.forecasts);
@@ -53,9 +48,7 @@ export class FetchData extends Component {
       <div>
         <h1>Weather forecast</h1>
         <p>This component demonstrates fetching data from the server.</p>
-            {contents}
-
-        <Weather id='More Stuff'/>
+        {contents}
       </div>
     );
   }

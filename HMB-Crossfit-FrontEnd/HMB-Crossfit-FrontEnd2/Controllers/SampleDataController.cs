@@ -4,18 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HMB_Crossfit_FrontEnd.Controllers
+namespace HMB_Crossfit_FrontEnd2.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class SampleDataController : ControllerBase
+    public class SampleDataController : Controller
     {
         private static string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
             var rng = new Random();

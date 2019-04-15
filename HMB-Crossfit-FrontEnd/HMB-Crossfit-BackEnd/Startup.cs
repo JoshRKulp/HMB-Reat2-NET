@@ -57,7 +57,7 @@ namespace HMB_Crossfit_BackEnd
                 builder.WithOrigins("http://example.com",
                                     "http://www.contoso.com",
                                     "https://localhost:44343",
-                                    "https://localhost:5001");
+                                    "http://localhost:59127");
             });
             app.UseHttpsRedirection();
             app.UseMvc();

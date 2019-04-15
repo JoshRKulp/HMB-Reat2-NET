@@ -12,7 +12,7 @@ export class NavMenu extends Component {
       <Navbar inverse fixedTop fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={'/'}>HMB_Crossfit_FrontEnd</Link>
+            <Link to={'/'}>HMB_Crossfit_FrontEnd2</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

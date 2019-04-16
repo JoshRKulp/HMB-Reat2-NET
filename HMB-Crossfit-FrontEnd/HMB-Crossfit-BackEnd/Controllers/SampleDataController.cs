@@ -21,7 +21,7 @@ namespace HMB_Crossfit_BackEnd.Controllers
         public JsonResult WeatherForecasts()
         {
             var rng = new Random();
-            return new JsonResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return new JsonResult(Enumerable.Range(1, 50).Select(index => new WeatherForecast
             {
                 DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
                 TemperatureC = rng.Next(-20, 55),

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap'
 
 export class FetchData extends Component {
   displayName = FetchData.name
@@ -15,27 +16,39 @@ export class FetchData extends Component {
   }
 
   static renderForecastsTable(forecasts) {
-    return (
-      <table className='table'>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          {forecasts.map(forecast =>
-            <tr key={forecast.dateFormatted}>
-              <td>{forecast.dateFormatted}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      return (
+          <div>
+              <Button className="btn-secondary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+              <Button variant="success">Success</Button>
+              <Button variant="warning">Warning</Button>
+              <Button variant="danger">Danger</Button>
+              <Button variant="info">Info</Button>
+              <Button variant="light">Light</Button>
+              <Button variant="dark">Dark</Button>
+              <Button variant="link">Link</Button>
+
+              <table className='table' fluid>
+                  <thead>
+                      <tr>
+                          <th>Date</th>
+                          <th>Temp. (C)</th>
+                          <th>Temp. (F)</th>
+                          <th>Summary</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {forecasts.map(forecast =>
+                          <tr key={forecast.dateFormatted}>
+                              <td>{forecast.dateFormatted}</td>
+                              <td>{forecast.temperatureC}</td>
+                              <td>{forecast.temperatureF}</td>
+                              <td>{forecast.summary}</td>
+                          </tr>
+                      )}
+                  </tbody>
+              </table>
+          </div>
     );
   }
 

@@ -1,41 +1,34 @@
 ﻿import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import './NavMenu.css';
+import { SystemStyle } from './Style/DefaultTheam';
+import { NavLink } from './NavLink';
 
 export class NavMenu extends Component {
-  displayName = NavMenu.name
+    displayName = NavMenu.name;
 
-  render() {
-    return (
-      <Navbar inverse fixedTop fluid collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link to={'/'}>HMB_Crossfit_FrontEnd2</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <LinkContainer to={'/'} exact>
-              <NavItem>
-                <Glyphicon glyph='home' /> Home
-              </NavItem>
-            </LinkContainer>
-            <LinkContainer to={'/counter'}>
-              <NavItem>
-                <Glyphicon glyph='education' /> Counter
-              </NavItem>
-            </LinkContainer>
-            <LinkContainer to={'/fetchdata'}>
-              <NavItem>
-                <Glyphicon glyph='th-list' /> Fetch data
-              </NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+    render() {
+        let style = {
+            title: {
+                color: 'white',
+                fontSize: 32,
+                padding: 0,
+                margin: 0,
+                //gridArea: 'Title'
+            },
+            container: {
+                backgroundColor: SystemStyle.primary,
+                display: 'grid',
+                gridTemplateColumns: '5fr 1fr 1fr 1fr',
+                //gridTemplateRows: 'auto',
+                //gridTemplateAreas: "'Title Link1 Link2 Link3'"
+            }
+        };
+      return (
+          <div style={style.container}>
+              <h1 style={style.title}>HMB Crossfit</h1>
+              <NavLink href="/" title="Home" />
+              <NavLink href="/counter" title="Counter" />
+              <NavLink href="/FetchData" title="Data" />
+          </div>
     );
   }
 }

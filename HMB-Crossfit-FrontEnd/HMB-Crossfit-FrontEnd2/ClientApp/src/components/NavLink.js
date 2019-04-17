@@ -15,8 +15,7 @@ export class NavLink extends Component {
             links: {
                 textDecoration: 'none',
                 color: this.state.hover ? SystemStyle.third : SystemStyle.primary ,
-                fontSize: 30,
-                animation: 'all bounceIn 2s'
+                fontSize: 30
             },
             linksWrap: {
                 backgroundColor: this.state.hover ? SystemStyle.primary : SystemStyle.third,
